@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJK Electronics Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: lightseagreen;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav {
+            background-color: #164a5f;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+        }
+        .container {
+            padding: 20px;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .product {
+            border: 1px solid #5acbd3;
+            padding: 20px;
+            text-align: center;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+    
+        .chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        button{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to the MJK Electronics Store</h1>
+    <p>Quality products at the best prices</p>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Shop</a>
+    <a href="#">Support</a>
+    <a href="#">Return/Refund Here</a>
+    <a href="#">Cart</a>
+</nav>
+
+<div class="container">
+    <h2>Featured Products</h2>
+    <div class="products">
+        <div class="product">
+            <img src="https://cdn.thewirecutter.com/wp-content/media/2024/05/smartphone-2048px-1013.jpg?auto=webp&quality=75&width=1024" alt="Product 1">
+            <h3>ZYX Model 123</h3>
+            <p>$299.99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfo64deVgE_ewhW2emAT43liRQGB_cq7s1TA&s" alt="Product 2">
+            <h3>JKL Tablet</h3>
+            <p>$399.99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://news.lenovo.com/wp-content/uploads/2024/01/11_Thinkbook_14_G6_plus_Hero_Front_Facing_Right.png" alt="Product 3">
+            <h3>WASD Gaming PC</h3>
+            <p>$499.99</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+<!-- Chatbot Integration -->
+<script>
+    window.watsonAssistantChatOptions = {
+      integrationID: "e52c48fd-e44d-455b-b72e-e7a0ab5e091e", // The ID of this integration.
+      region: "au-syd", // The region your integration is hosted in.
+      serviceInstanceID: "563b4bd3-d74b-4ca2-b7f4-cabb4a19a835", // The ID of your service instance.
+      onLoad: async (instance) => { await instance.render(); }
+    };
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
+
+</body>
+</html>
